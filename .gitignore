@@ -1,2 +1,11 @@
 *.swp
 *~
+
+# MakeMaker build files
+*.bs
+Lemmatizer.c
+*.o
+MYMETA.yml
+Makefile
+blib/
+pm_to_blib

@@ -27,15 +27,15 @@ extern "C" {
 
 #define STRLEN(s) (sizeof(s) - 1)
 
-#include "lem_interface.hpp"
+#include "LemInterface.hpp"
 
 class LemmatizerAgent {
 private:
-    lemInterface lem_;
+    LemInterface lem_;
 
 public:
     LemmatizerAgent() : lem_(true /* utf8 */) { }
-    bool Lemmatize(const std::string &word, lemInterface::result_t *res, int flags) {
+    bool Lemmatize(const std::string &word, LemInterface::result_t *res, int flags) {
         return lem_.Lemmatize(word, res, flags);
     }
 };
@@ -53,7 +53,7 @@ void
 LemmatizerAgent::FirstForm(const char *word)
 INIT:
 PPCODE:
-    lemInterface::result_t res;
+    LemInterface::result_t res;
     if (THIS->Lemmatize(word, &res, 0)) {
         PUSHs( sv_2mortal(newSVpv(res.first_form.c_str(), 0)) );
     }
@@ -66,7 +66,7 @@ PPCODE:
     HV *ph;
     SV *pfirst_form;
     SV *pspeech_part;
-    lemInterface::result_t res;
+    LemInterface::result_t res;
 
     if (THIS->Lemmatize(word, &res, flags)) {
         ph = newHV();
@@ -74,7 +74,7 @@ PPCODE:
         pfirst_form = newSVpvn(res.first_form.c_str(), res.first_form.length()) ;
         hv_store(ph, "first_form", STRLEN("first_form"), pfirst_form, 0);
 
-        if (flags & lemInterface::FILL_PART_OF_SPEECH) {
+        if (flags & LemInterface::FILL_PART_OF_SPEECH) {
             pspeech_part = newSVpvn(res.part_of_speech.c_str(), res.part_of_speech.length());
             hv_store(ph, "part_of_speech", STRLEN("part_of_speech"), pspeech_part, 0);
         }

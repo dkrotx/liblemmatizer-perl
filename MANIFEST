@@ -1,13 +1,11 @@
 Changes
 Lemmatizer.xs
-lib
 lib/Lemmatizer.pm
 Makefile.PL
 MANIFEST
 perlobject.map
 ppport.h
 README
-t
 t/00-Lemmatizer.t
 t/01-FirstForm.t
 t/02-Lemmatize.t
