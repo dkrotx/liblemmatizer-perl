@@ -36,45 +36,44 @@ bootstrap Lemmatizer $VERSION;
 
 1;
 __END__
-# Below is stub documentation for your module. You'd better edit it!
 
 =head1 NAME
 
-Lemmatizer - Perl extension for blah blah blah
+Lemmatizer - Perl extension for gogo_lemmatizer library.
 
 =head1 SYNOPSIS
 
   use Lemmatizer;
-  blah blah blah
+
+  my $lem = new Lemmatizer;
+
+  # simplest form of usage
+  my $first_form = $lem->FirstForm("played"); # should be "PLAY"
+
+  # more complicated usage
+  my $info = $lem->Lemmatize("played", LEMM_PART_OF_SPEECH);
+  printf("first form is '%s'; part of speech is '%s'\n", $info->{first_form}, $info->{part_of_speech});
+  # will print "PLAY", "VERB"
+  
 
 =head1 DESCRIPTION
 
-Stub documentation for Lemmatizer, created by h2xs. It looks like the
-author of the extension was negligent enough to leave the stub
-unedited.
-
-Blah blah blah.
+Lemmatizer Perl extension provides wrapper for C++ AOT library. You picking the word, and get some information about it.
+This just a stub for most common cases. If you have additional cases which you feel appropriate for this extension,
+e-mail me please.
 
 =head2 EXPORT
 
-None by default.
-
+Constants like LEMM_PART_OF_SPEECH is exported by default.
 
 
 =head1 SEE ALSO
 
-Mention other useful documentation such as the documentation of
-related modules or operating system documentation (such as man pages
-in UNIX), or any relevant external documentation such as RFCs or
-standards.
-
-If you have a mailing list set up for your module, mention it here.
-
-If you have a web site set up for your module, mention it here.
+Web-site of origin creators of lemmatizer library: http://aot.ru/
 
 =head1 AUTHOR
 
-KISEL Jan, E<lt>dkrot@E<gt>
+KISEL Jan, E<lt>jdkrot@gmail.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -13,7 +13,7 @@ my @cases = (
     {
         origin         => "456ghj567",
         first_form     => "456GHJ567",
-        part_of_speech => "С",
+        part_of_speech => "NOUN", # since "English"
     },
 );
 
