@@ -1,0 +1,8 @@
+Changes
+Lemmatizer.xs
+Makefile.PL
+MANIFEST
+ppport.h
+README
+t/Lemmatizer.t
+lib/Lemmatizer.pm

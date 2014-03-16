@@ -1,0 +1,6 @@
+Revision history for Perl extension Lemmatizer.
+
+0.01  Sun Mar 16 10:38:02 2014
+	- original version; created by h2xs 1.23 with options
+		-b 5.3.0 -A -n Lemmatizer
+
