@@ -1,40 +1,53 @@
-Lemmatizer version 0.01
-=======================
+liblemmatizer-perl
+==================
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
-
-A README file is required for CPAN modules since CPAN extracts the
-README file from a module distribution so that people browsing the
-archive can use it get an idea of the modules uses. It is usually a
-good idea to provide version information here so that people can
-decide whether fixes for the module are worth downloading.
+Perl module for gogo_lemmatizer
 
 INSTALLATION
+------------
 
 To install this module type the following:
 
    perl Makefile.PL
    make
    make test
-   make install
+   make install # or sudo make install for system-wide
 
 DEPENDENCIES
+------------
 
 This module requires these other modules and libraries:
-
+  gogo_lemmatizer (C++ library)
   Test
 
-COPYRIGHT AND LICENCE
+USAGE
+-----
 
-Put the correct copyright and licence information here.
+Look at `perldoc Lemmatizer` after install
+
+EXAMPLES
+--------
+
+You may find good examples among Unit Tests in t/ directory.
+
+FAQ
+---
+
+1. Is Lemmatizer supports UTF-8?
+   Lemmatizer itself (AOT library) doesn't support UTF-8. It's pure CP1251 by historical reasons.
+   But for nowadays it's impossible to ignore Unicode. So, the wrapper around Lemmatizer library (LemInterface)
+   provides transparent encoding to and from "CP1251".
+
+   Perl interface to Lemmatizer suppose to be UTF-8 only.
+   (actually it can use CP1251, but I didn't provide this option)
+
+2. Which languages are supported By lemmatizer?
+   Russian and English
+
 
 Copyright (C) 2014 by KISEL Jan
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.14.2 or,
 at your option, any later version of Perl 5 you may have available.
-
 
